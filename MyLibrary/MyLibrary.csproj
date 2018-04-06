@@ -13,6 +13,11 @@
   <ItemGroup>
     <PackageReference Include="SourceLink.GitHub" Version="1.0.0-dev" PrivateAssets="all" />
   </ItemGroup>
+
+  <!-- Include source files from a submodule -->
+  <ItemGroup>
+    <Compile Include="..\sub\**.cs"/>
+  </ItemGroup>
   
   <!-- 
     Generate some code 
