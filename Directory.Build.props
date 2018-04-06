@@ -1,0 +1,16 @@
+<Project>
+  <PropertyGroup>
+    <!-- Declare that this is a public repo -->
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="SourceLink.GitHub" Version="1.0.0-dev" PrivateAssets="all" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <!-- Workaround for not having NuGet symbol server yet -->
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+    <PackageOutputPath>$(MSBuildThisFileDirectory)out</PackageOutputPath>
+  </PropertyGroup>
+</Project>
