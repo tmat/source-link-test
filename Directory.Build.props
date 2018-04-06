@@ -11,5 +11,6 @@
   <PropertyGroup>
     <!-- Workaround for not having NuGet symbol server yet -->
     <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+    <PackageOutputPath>$(MSBuildThisFileDirectory)out</PackageOutputPath>
   </PropertyGroup>
 </Project>
