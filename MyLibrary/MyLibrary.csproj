@@ -12,14 +12,6 @@
   <ItemGroup>
     <PackageReference Include="SourceLink.GitHub" Version="1.0.0-dev" PrivateAssets="all" />
   </ItemGroup>
-
-  <!--
-     Reference a source package
-  -->
-  <ItemGroup>
-    <PackageReference Include="Microsoft.CodeAnalysis.PooledObjects" Version="$(MicrosoftCodeAnalysisPooledObjectsVersion)" />
-    <PackageReference Include="System.Collections.Immutable" Version="$(SystemCollectionsImmutableVersion)" />
-  </ItemGroup>
   
   <!-- 
     Generate some code 
