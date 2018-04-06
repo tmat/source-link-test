@@ -2,41 +2,5 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <IsPackable>true</IsPackable>
-    <DebugType>embedded</DebugType>
-
-    <!-- Declare that this is a public repo -->
-    <PublishRepositoryUrl>true</PublishRepositoryUrl>
-
-    <!-- Embed files that are not under source control to PDB -->
-    <EmbedUntrackedSources>true</EmbedUntrackedSources>
   </PropertyGroup>
-  <ItemGroup>
-    <PackageReference Include="SourceLink.GitHub" Version="1.0.0-dev" PrivateAssets="all" />
-  </ItemGroup>
-
-  <!-- Include source files from a submodule -->
-  <ItemGroup>
-    <Compile Include="..\sub\**.cs"/>
-  </ItemGroup>
-  
-  <!-- 
-    Generate some code 
-  -->
-  <Target Name="_GetGeneratedFileName">
-    <PropertyGroup>
-      <_GeneratedFile>$(IntermediateOutputPath)\GeneratedFile.g.cs</_GeneratedFile>
-    </PropertyGroup>
-  </Target>
-
-  <Target Name="_GenerateFile" BeforeTargets="CoreCompile" DependsOnTargets="_GetGeneratedFileName" Outputs="$(_GeneratedFile)">
-    <WriteLinesToFile 
-      File="$(_GeneratedFile)"
-      Lines="public class GeneratedClass { public static void GeneratedMethod() { System.Console.WriteLine(123)%3B } }"
-      Overwrite="true" />
-      
-    <ItemGroup>
-      <Compile Include="$(_GeneratedFile)" />
-      <FileWrites Include="$(_GeneratedFile)" />
-    </ItemGroup> 
-  </Target>
 </Project>
