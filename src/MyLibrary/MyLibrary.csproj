@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <IsPackable>true</IsPackable>
+
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="SourceLink.GitHub" Version="1.0.0-dev" PrivateAssets="all" />
+  </ItemGroup>
+  
+  <!-- 
+    Generate some code 
+  -->
+  <PropertyGroup>
+    <_GeneratedFile>$(IntermediateOutputPath)\GeneratedFile.g.cs</_GeneratedFile>
+  </PropertyGroup>
+
+  <Target Name="_GenerateFile" BeforeTargets="CoreCompile" Outputs="$(_GeneratedFile)">
+    <ItemGroup>
+      <_Lines Include="// &lt;auto-generated/&gt;" />
+      <_Lines Include="using System%3B"/>
+      <_Lines Include="public class GeneratedClass"/>
+      <_Lines Include="{"/>
+      <_Lines Include="  public static void GeneratedMethod()"/>
+      <_Lines Include="  {"/>
+      <_Lines Include="    Console.WriteLine(123)%3B"/>
+      <_Lines Include="  }"/>
+      <_Lines Include="}"/>
+    </ItemGroup>
+
+    <WriteLinesToFile File="$(_GeneratedFile)" Lines="@(_Lines)" Overwrite="true" />
+    <ItemGroup>
+      <Compile Include="$(_GeneratedFile)" />
+      <FileWrites Include="$(_GeneratedFile)" />
+    </ItemGroup> 
+  </Target>
+</Project>
