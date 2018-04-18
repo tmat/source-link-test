@@ -6,5 +6,6 @@ public class MyClass
     {
        GeneratedClass.GeneratedMethod();
        ClassInSubmodule.M();
+       ClassInVstsSubmodule.M();
     }
 }
