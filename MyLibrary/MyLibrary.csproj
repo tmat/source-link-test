@@ -10,7 +10,8 @@
 
   <!-- Include source files from a submodule -->
   <ItemGroup>
-    <Compile Include="..\sub\**.cs"/>
+    <Compile Include="..\sub\**\*.cs"/>
+    <Compile Include="..\vstssub\**\*.cs"/>
   </ItemGroup>
   
   <!-- 

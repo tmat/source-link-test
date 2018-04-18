@@ -6,6 +6,7 @@
   
   <ItemGroup>
     <PackageReference Include="SourceLink.GitHub" Version="1.0.0-dev" PrivateAssets="all" />
+    <PackageReference Include="SourceLink.VSO.Git" Version="1.0.0-dev" PrivateAssets="all" />
   </ItemGroup>
 
   <PropertyGroup>
