@@ -5,8 +5,8 @@
   </PropertyGroup>
   
   <ItemGroup>
-    <PackageReference Include="SourceLink.GitHub" Version="1.0.0-beta-62820-03" PrivateAssets="all" />
-    <PackageReference Include="SourceLink.VSTS.Git" Version="1.0.0-beta-62820-03" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0-beta-62901-01" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.SourceLink.VSTS.Git" Version="1.0.0-beta-62901-01" PrivateAssets="all" />
   </ItemGroup>
 
   <PropertyGroup>
